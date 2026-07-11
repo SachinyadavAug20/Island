@@ -44,6 +44,9 @@ TagManager:
   - name: bg
     uniqueID: 3855581127
     locked: 0
+  - name: platform
+    uniqueID: 2837213369
+    locked: 0
   m_RenderingLayers:
   - Default
   - Light Layer 1
