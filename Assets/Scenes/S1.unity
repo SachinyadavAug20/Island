@@ -200,6 +200,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332922900dd6715a8a2b4ad8ed2601bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1 &7818041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1996320607083189874, guid: e9ce197a8822307288fab5bb64569642, type: 3}
+  m_PrefabInstance: {fileID: 7818039}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &74888803
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +593,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   player1: {fileID: 7818040}
   player2: {fileID: 1196073223355387932}
+  player1Indicator: {fileID: 7818041}
+  player2Indicator: {fileID: 1196073223355387933}
 --- !u!4 &1296845782
 Transform:
   m_ObjectHideFlags: 0
@@ -809,6 +816,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7272336471196548244, guid: e9ce197a8822307288fab5bb64569642, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -825,6 +836,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332922900dd6715a8a2b4ad8ed2601bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1 &1196073223355387933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1996320607083189874, guid: e9ce197a8822307288fab5bb64569642, type: 3}
+  m_PrefabInstance: {fileID: 1196073223355387931}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6784228231099301403
 PrefabInstance:
   m_ObjectHideFlags: 0

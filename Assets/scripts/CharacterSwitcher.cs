@@ -6,6 +6,10 @@ public class CharacterSwitcher : MonoBehaviour
     [Header("Player References")]
     public PlayerMovement player1;
     public PlayerMovement player2;
+
+    [Header("Visual Indicators")]
+    public GameObject player1Indicator; 
+    public GameObject player2Indicator;
     
     private bool isPlayer1Active = true;
 
@@ -42,7 +46,7 @@ public class CharacterSwitcher : MonoBehaviour
         player1.isActivePlayer = isPlayer1Active;
         player2.isActivePlayer = !isPlayer1Active;
 
-        player1.GetComponent<SpriteRenderer>().color = isPlayer1Active ? Color.white : new Color(0.5f, 0.5f, 0.5f, 1f);
-        player2.GetComponent<SpriteRenderer>().color = !isPlayer1Active ? Color.white : new Color(0.5f, 0.5f, 0.5f, 1f);
+        if (player1Indicator != null) player1Indicator.SetActive(isPlayer1Active);
+        if (player2Indicator != null) player2Indicator.SetActive(!isPlayer1Active);
     }
 }
