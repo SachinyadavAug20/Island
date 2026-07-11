@@ -9,9 +9,10 @@ public class PlayerMovement : MonoBehaviour
     SpriteRenderer _sr;
     Animator _anim;
     public bool _isPlayerWalking;
+    public bool isActivePlayer = false;
 
     [Header("Ground Detection")]
-    public Transform groundCheck; 
+    public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
     private bool isGrounded;
@@ -22,32 +23,48 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _sr = GetComponent<SpriteRenderer>();
-        _anim =GetComponent<Animator>();
+        _anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (groundCheck != null) {
+        if (groundCheck != null)
+        {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         }
 
         _anim.SetBool("isJumping", !isGrounded);
     }
-    void OnJump(InputValue value)
+
+    public void ReceiveJumpInput(bool isPressed)
     {
-        if (value.isPressed && isGrounded)
+        if (!isActivePlayer) return;
+
+        if (isPressed && isGrounded)
         {
             _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, jumpForce);
         }
     }
 
-    void OnMove(InputValue value)
+    public void ReceiveMoveInput(Vector2 newMoveInput)
     {
-        moveInput = value.Get<Vector2>();
+        if (!isActivePlayer)
+        {
+            moveInput = Vector2.zero;
+            return;
+        }
+        moveInput = newMoveInput;
     }
 
     void FixedUpdate()
     {
+        if (!isActivePlayer)
+        {
+            _rb.linearVelocity = new Vector2(0, _rb.linearVelocity.y);
+            _anim.SetBool("isWalking", false);
+            return;
+        }
+
         // move
         _rb.linearVelocity = new Vector2(moveInput.x * speed, _rb.linearVelocity.y);
         // flip
