@@ -600,6 +600,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RopeRenderer
   player1: {fileID: 2087517966}
   player2: {fileID: 1196073223355387936}
+  resolution: 20
+  maxSag: 1.5
+  maxDistance: 5
+  preventGoingBelowGround: 1
+  distanceToFeet: 0.5
 --- !u!120 &759843301
 LineRenderer:
   serializedVersion: 3
@@ -645,8 +650,8 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1457753927
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Positions:
@@ -659,8 +664,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.014084508
-        value: 0.14556962
+        time: 0.016899753
+        value: 0.056962024
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -672,9 +677,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 0.9622642, g: 0.37673548, b: 0.5617682, a: 1}
+      key1: {r: 0.9056604, g: 0.44874102, b: 0.12388753, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -689,17 +694,17 @@ LineRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
-      atime2: 0
+      atime1: 16769
+      atime2: 65535
       atime3: 0
       atime4: 0
       atime5: 0
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
+      m_NumAlphaKeys: 3
     numCornerVertices: 0
     numCapVertices: 0
     alignment: 0
@@ -725,6 +730,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &948021944
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458708644889859781, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423835741409426906, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_Name
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562026253388513006, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562026253388513006, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1457753927
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc5360a4f04fa59bb98ac623e4b9eb7d, type: 3}
 --- !u!1 &1068776239
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,8 +1141,8 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 1.25
+  m_AutoConfigureDistance: 0
+  m_Distance: 5
   m_MaxDistanceOnly: 1
 --- !u!1001 &1196073223355387931
 PrefabInstance:
@@ -1228,3 +1298,4 @@ SceneRoots:
   - {fileID: 1296845782}
   - {fileID: 1068776243}
   - {fileID: 759843302}
+  - {fileID: 948021944}
