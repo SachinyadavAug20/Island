@@ -296,7 +296,7 @@ MonoBehaviour:
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
 --- !u!95 &8551653682972306666
 Animator:
   serializedVersion: 7

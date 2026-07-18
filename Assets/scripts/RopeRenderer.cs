@@ -20,7 +20,7 @@ public class RopeRenderer : MonoBehaviour
     void Start()
     {
         line = GetComponent<LineRenderer>();
-        line.positionCount = resolution; 
+        line.positionCount = resolution;
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class RopeRenderer : MonoBehaviour
 
         Vector3 p1 = player1.position;
         Vector3 p2 = player2.position;
-        
+
         float currentDistance = Vector3.Distance(p1, p2);
         float sagMultiplier = Mathf.Max(0, 1f - (currentDistance / maxDistance));
         float currentSag = maxSag * sagMultiplier;
@@ -40,7 +40,7 @@ public class RopeRenderer : MonoBehaviour
         if (preventGoingBelowGround)
         {
             float floorY = Mathf.Min(p1.y, p2.y) - distanceToFeet;
-            
+
             midPoint.y = Mathf.Max(midPoint.y, floorY);
         }
 
@@ -57,7 +57,7 @@ public class RopeRenderer : MonoBehaviour
         float u = 1 - t;
         float tt = t * t;
         float uu = u * u;
-        
+
         Vector3 p = (uu * p0) + (2 * u * t * p1) + (tt * p2);
         return p;
     }
